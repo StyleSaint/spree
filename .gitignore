@@ -3,6 +3,7 @@
 **/*.log
 *~
 .#*
+._*
 .DS_Store
 .bundle
 .dotest

@@ -55,5 +55,8 @@ Spree::Core::Engine.routes.draw do
     end
     resources :inventory_units, :only => [:show, :update]
     resources :users
+    
+    put '/classifications', :to => 'classifications#update', :as => :classifications
+    get '/taxons/products', :to => 'taxons#products', :as => :taxon_products
   end
 end

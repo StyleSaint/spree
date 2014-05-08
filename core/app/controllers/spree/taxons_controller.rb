@@ -17,6 +17,10 @@ module Spree
       respond_with(@taxon)
     end
 
+    def index
+      
+    end
+
     private
 
     def accurate_title

@@ -152,7 +152,7 @@ Spree::Core::Engine.routes.draw do
       resources :taxons
     end
 
-    resources :taxons, :only => [] do
+    resources :taxons, :only => [:index, :show] do
       collection do
         get :search
       end

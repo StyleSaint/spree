@@ -8,7 +8,11 @@ module Spree
         if params[:ids]
           @taxons = Spree::Taxon.where(:id => params[:ids].split(','))
         else
-          @taxons = Spree::Taxon.limit(20).search(:name_cont => params[:q]).result
+          if !params[:q].nil? && params[:q].kind_of?(String)
+            @taxons = Spree::Taxon.limit(20).ransack(:name_cont => params[:q]).result
+          else
+            @taxons = Spree::Taxon.limit(20).ransack(:name_cont => params[:q][:name_cont]).result
+          end
         end
       end
 

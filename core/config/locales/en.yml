@@ -330,6 +330,7 @@ en:
   checkout: Checkout
   cheque: Cheque
   choose_a_customer: "Choose a customer"
+  choose_a_taxon_to_sort_products_for: "Choose a taxon to sort products for"
   city: City
   clone: Clone
   code: Code
@@ -462,6 +463,7 @@ en:
   final_confirmation: "Final Confirmation"
   finalize: Finalize
   finalized_payments: Finalized Payments
+  find_a_taxon: Find a Taxon
   first_item: First Item Cost
   first_name: "First Name"
   first_name_begins_with: "First Name Begins With"

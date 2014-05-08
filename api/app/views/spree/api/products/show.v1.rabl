@@ -1,5 +1,10 @@
 object @product
 attributes *product_attributes
+
+child :master => :master do
+  extends "spree/api/variants/variant"
+end
+
 child :variants_including_master => :variants do
   attributes *variant_attributes
 

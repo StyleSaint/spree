@@ -82,7 +82,6 @@ module Spree
       end
 
       def current_ability
-        Rails.logger.debug("Current API User: #{current_api_user.to_json}")
         Spree::Ability.new(current_api_user)
       end
 

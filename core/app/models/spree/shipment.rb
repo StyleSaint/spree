@@ -102,7 +102,10 @@ module Spree
     def update!(order)
       old_state = state
       new_state = determine_state(order)
-      update_column 'state', new_state
+      update_columns(
+        state: new_state,
+        updated_at: Time.now,
+      )
       after_ship if new_state == 'shipped' and old_state != 'shipped'
     end
 

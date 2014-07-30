@@ -1,7 +1,7 @@
 module AuthorizationHelpers
   module Controller
     def stub_authorization!
-      let(:ability_user) { stub_model(Spree::LegacyUser) }
+      let(:ability_user) { stub_model(Spree.user_class) }
 
       before do
         controller.stub(:authorize! => true)

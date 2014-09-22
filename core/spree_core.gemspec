@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'acts_as_list', '= 0.1.5'
+  s.add_dependency 'acts_as_list', '>= 0.4.0'
   s.add_dependency 'awesome_nested_set', '2.1.5'
 
   s.add_dependency 'jquery-rails', '~> 2.2.0'

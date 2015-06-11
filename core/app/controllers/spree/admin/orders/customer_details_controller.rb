@@ -17,7 +17,7 @@ module Spree
 
         def update
           if @order.update_attributes(params[:order])
-            shipping_method = @order.available_shipping_methods(:front_end).first
+            shipping_method = @order.available_shipping_methods(:front_end).last # Use the Ground shipping method as default shipping method.
             if shipping_method
               @order.shipping_method = shipping_method
 

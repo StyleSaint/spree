@@ -22,7 +22,7 @@
         <%- locals = {:f => f} %>
 
         <div data-hook="admin_products_index_search">
-          <div class="alpha nine columns">
+          <div class="alpha six columns">
             <div class="field">
               <%= f.label :name_cont, t(:name) %>
               <%= f.text_field :name_cont, :size => 15 %>
@@ -33,6 +33,12 @@
               <%= f.label :variants_including_master_sku_cont, t(:sku) %>
               <%= f.text_field :variants_including_master_sku_cont, :size => 15 %>
             </div>
+          </div>
+          <div class="three columns">
+            <%= f.field_container :available_on do %>
+              <%= f.label :available_on_lt, t(:available_on) %>
+              <%= f.text_field :available_on_lt, :value => datepicker_field_value(params[:q][:available_on_lt].to_date ||= Time.now), :class => 'datepicker' %>
+            <% end %>
           </div>
           <div class="three columns omega">
             <div class="field checkbox">

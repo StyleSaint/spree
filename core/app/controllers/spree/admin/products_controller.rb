@@ -79,6 +79,7 @@ module Spree
           return @collection if @collection.present?
           params[:q] ||= {}
           params[:q][:deleted_at_null] ||= "1"
+          params[:q][:available_on_lt] ||= Time.now
 
           params[:q][:s] ||= "name asc"
 

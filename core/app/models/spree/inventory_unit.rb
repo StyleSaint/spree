@@ -94,7 +94,6 @@ module Spree
         return unless variant_units.include? variant.id
 
         variant_units = variant_units[variant.id].sort_by(&:state)
-
         quantity.times do
           inventory_unit = variant_units.shift
           inventory_unit.destroy

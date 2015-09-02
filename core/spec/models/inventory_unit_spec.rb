@@ -272,7 +272,7 @@ describe Spree::InventoryUnit do
       it "should  destroy shipped" do
         order.inventory_units[0].should_receive(:destroy)
         order.inventory_units[1].should_receive(:destroy)
-        Spree::InventoryUnit.destroy_units(order, variant, 1)
+        Spree::InventoryUnit.destroy_units(order, variant, 2)
       end
     end
   end

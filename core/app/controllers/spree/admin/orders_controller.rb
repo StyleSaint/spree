@@ -39,7 +39,12 @@ module Spree
           @search = Spree::Order.where('`spree_shipments`.`state` = ? ', 'ready').accessible_by(current_ability, :index).ransack(params[:q])
           params[:q]['state_eq'] = 'ready'
         else
-          @search = Spree::Order.accessible_by(current_ability, :index).ransack(params[:q])
+          if params[:q]['state_eq'].blank?
+            @search = Spree::Order.where('`spree_orders`.`state` != ? ', 'canceled').accessible_by(current_ability, :index).ransack(params[:q])
+          else
+            @search = Spree::Order.accessible_by(current_ability, :index).ransack(params[:q])
+          end
+
         end
         @orders = @search.result.includes([:user, :shipments, :payments]).
           page(params[:page]).
